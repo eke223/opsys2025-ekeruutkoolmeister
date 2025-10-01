@@ -1,4 +1,5 @@
 # Praktikum 2 aruanne
-Käesolevas praktikumis käisin läbi Linux keskkonna juba enda jaoks teadaolevad õppesammud. Praktikumi lõpus lahendasin veebilehitsejas oleval käsureal automaatkontrollitavad Linuxi käsurea käske kontrolliva harjutuse. 
+Käesolevas praktikumis käisin läbi Linux keskkonna juba enda jaoks teadaolevad õppesammud. Praktikumi lõpus lahendasin veebilehitsejas oleval käsureal kaks automaatkontrollitavat Linuxi käsurea käske kontrollivat harjutust. 
 
-<img width="1279" height="798" alt="image" src="https://github.com/user-attachments/assets/98422596-bc01-4e94-825a-d7d33b951779" />
+<img width="1272" height="795" alt="image" src="https://github.com/user-attachments/assets/16b86328-7a65-491e-b114-802afc5eefcd" />
+
