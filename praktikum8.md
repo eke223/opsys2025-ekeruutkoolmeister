@@ -1,4 +1,4 @@
-# Praktikum 9 – RAID ja andmete varundamine
+# Praktikum 8 – RAID ja andmete varundamine
 
 ## RAID 1 Windowsiga
 <img width="1919" height="1039" alt="image" src="https://github.com/user-attachments/assets/b39b0a6c-898f-401d-8cac-e8d196144cb7" />
