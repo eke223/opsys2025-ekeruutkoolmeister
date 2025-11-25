@@ -1,0 +1,20 @@
+| Küsimus | Linux | Windows | Linuxi käsk | Windowsi tööriist |
+|--------|--------|----------|-------------|--------------------|
+| Mitu protsessi kokku arvutis käib? | 243 | 134 | `ps -ef \| wc -l` | Task Manager → Performance → CPU |
+| Milline on kõige esimesena käivitatud protsess? | /sbin/init splash | Registry 14 588 K	68 020 K	124 | `ps -eo lstart,pid,cmd --sort=+lstart \| sed -n '2p'` | Process Explorer → Start Time |
+| Milliste kasutajate protsesse arvutis käib? | avahi, colord, eke, messagebus, polkitd, root, rtkit, syslog, systemd-oom, systemd-resolve, systemd-timesync | DWM-1M, Eke Ruut, LOCAL SERVICE, NETWORK SERVICE, SYSTEM, UMFD-0, UMFD-1 | `ps -eo user \| sort \| uniq` | Task Manager → Details → User Name |
+| Arvuti järjest töötanud aeg (uptime)? | up 2 hours, 7 minutes | 0:00:15:30 | `uptime -p` | Task Manager → Performance → CPU uptime |
+| Kõige hiljem käivitatud protsess? | 5897 Tue Nov 25 23:07:32 2025 [kworker/u13:5] | svchost.exe	4132 Windowsi teenuste hostprotsess Microsoft Corporation	1:16:26 AM 11/26/2025 | `ps -eo pid,lstart,cmd --sort=start_time` | Process Explorer → Start Time |
+| Kõige rohkem CPU-d kasutav protsess (%) | 14.5 5824 ptyxis --new-window --working-directory /home/eke/Desktop | Teenuse host: Windows Update 30.2%, svchost.exe | `ps -eo pcpu,pid,cmd --sort=-pcpu \| head` | Task Manager → CPU |
+| Kõige suurem virtuaalmälu kasutaja | 1  25880 /sbin/init splash | msedgewebview2.exe Microsoft Edge WebView2 Microsoft Corporation 3,677,847,432 K | `ps -eo pid,vsize,cmd --sort=-vsize \| head` | Process Explorer → Virtual Size |
+| Kõige rohkem füüsilist mälu kasutav protsess | 3719 13.3 /usr/bin/gnome-shell | Teenuse host: Windows Update 446.3MB, svchost.exe | `ps -eo pid,pmem,cmd --sort=-pmem \| head` | Task Manager → Memory |
+| Füüsilise mälu vaba ja kasutatud maht | available 1.8Gi, used 1.5Gi | Saadaval: 3.9GB, Kasutatud: 3.8GB | `free -h` | Task Manager → Performance → Memory |
+| Vaba ruum põhikettal | Avail 7.2G  | 18.34 GB | `df -h /` | Disk Management |
+| Suurim fail + kaust | 24G + 7.7G /snap, 7.7G /usr| /Windows 32.2GB, C:pagefile.sys 512.0 MB | `sudo du -ah / 2>/dev/null \| sort -h \| tail -1` / `sudo du -sh /* 2>/dev/null \| sort -h` | WinDirStat |
+| CPU kasutus sha1sum testil (Linux) | <img width="1321" height="617" alt="image" src="https://github.com/user-attachments/assets/0ae1ac9c-a264-4f75-b9fa-4c278eb4d87f" /> zero - 56.5 us, 19.4 sy, 24.0 id; random - 77.0 us, 4.2 sy, 18.4 id | — | `sha1sum /dev/zero \| sha1sum /dev/zero` + `top` | — |
+| Kõige rohkem kettale kirjutav protsess | — | System	1,466,368 (B/s) | — | Resource Monitor → Disk |
+| Fail, kuhu kõige rohkem kirjutatakse | — | C:\$LogFile (NTFS Volume Log) 1,466,368 (B/s) | — | Resource Monitor → Disk |
+| Kõige rohkem kettalt lugev protsess | — | svchost.exe (netsvcs -p)	C:\$Mft (NTFS Master File Table)	624,777	(B/s) | — | Resource Monitor → Disk |
+| Fail, kust kõige rohkem loetakse | — | C:\$Mft (NTFS Master File Table) 624,777	(B/s) | — | Resource Monitor → Disk |
+| Suurima võrguliiklusega protsess + ühenduse detailid | — | Kohalik IP: 10.0.2.15, Kohalik port: 58830, Remote IP: 193.40.5.90, Remote port: 443, Latents ei ole mõõdetav (ICMP blokitud, ping timeout) , Total: 519 B/s | — | Resource Monitor → Network, TCPView, CMD → ping, pilt tehtud natuke pärast mõõtmisi: <img width="1660" height="621" alt="image" src="https://github.com/user-attachments/assets/748e62b3-0fe8-4fe3-bdc2-84d1459af57d" />
+| Arvuti aeglustumise diagnoos (Linux/Windows) | — | `Süsteemi aeglustumise tuvastamiseks kasutatakse Task Managerit, Resource Monitori ja Process Explorerit. Task Manageris jälgitakse protsesside CPU, mälu ja ketta veerge, PID-i ja kasutajat. Resource Monitor kuvab täpse ülevaate protsesside CPU, ketta I/O ja võrgu aktiivsuse kohta. Process Explorer näitab CPU, füüsilise mälu (Private Bytes), töömälu (Working Set), protsessi algusaega ja käivitatud käske, võimaldades tuvastada pikaajalisi või ressursimahukaid protsesse, mis aeglustavad süsteemi tööd. `| — | Task Manager, Resource Monitor, Process Explorer |
